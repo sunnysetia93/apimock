@@ -8,7 +8,6 @@ const server = Hapi.server({
     host: 'localhost', 
     port: 8001
 });
-
 // Add the route
 server.route(routes);
 
