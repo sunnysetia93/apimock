@@ -17,6 +17,16 @@ let routes = [
         allow: 'multipart/form-data'
       }
     }
+  },
+  {
+    method:'GET',
+    path:'/dynamicdelay/volatile',
+    handler:handlers.dynamicDelayHandler
+  },
+  {
+    method:'GET',
+    path:'/dynamicdelay',
+    handler:handlers.dynamicDelayHandler_redis
   }
 ];
 

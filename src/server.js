@@ -1,7 +1,15 @@
 'use strict';
+import config from './config';
+const Hapi = require('hapi');
+const mongoose = require('mongoose');
+
+import './models/Wallet';
+import './models/init';
 import routes from './api';
 
-const Hapi = require('hapi');
+
+mongoose.Promise = global.Promise;
+mongoose.connect(config.mongoURI,{ useNewUrlParser: true });
 
 // Create a server with a host and port
 const server = Hapi.server({ 
