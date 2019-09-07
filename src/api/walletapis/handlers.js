@@ -5,7 +5,8 @@ import evulateExpression from './expressionEvaluator';
 export const getHandler = async(request,h)=>{
     const params = request.query;
     if(params.userId){
-        const userWallet = await Wallet.find({userId:params.userId})
+        const userWallet = await Wallet
+                                    .find({userId:params.userId})
         return {
             error:false,
             statusCode:200,
@@ -24,10 +25,10 @@ export const postHandler = async (request,h)=>{
     const params = request.payload;
     if( checkIfExists(params.user_id) && 
         checkIfExists(params.number_of_deposits) && 
-        checkIfExists(params.has_depositted) && 
+        checkIfExists(params.has_deposited) && 
         checkIfExists(params.wallet_balance) ){{
     
-        let wallet = await Wallet.findOne({userId:params.user_id,});
+        let wallet = await Wallet.findOne({userId:params.user_id});
         if(wallet!=null){
             return {
                 error:true,
@@ -37,7 +38,7 @@ export const postHandler = async (request,h)=>{
         }
         let newWallet = new Wallet({
             userId:params.user_id,
-            hasDeposited:params.hasDeposited,
+            hasDeposited:params.has_deposited,
             walletBalance:parseInt(params.wallet_balance),
             noOfDeposits:parseInt(params.number_of_deposits)
         })

@@ -7,7 +7,6 @@ import './models/Wallet';
 import './models/init';
 import routes from './api';
 
-
 mongoose.Promise = global.Promise;
 mongoose.connect(config.mongoURI,{ useNewUrlParser: true });
 
