@@ -45,3 +45,9 @@
 ```
 10. <b>in question 6, api is scalable in terms of adding more parameters and operators. (Code has been tested to operate on operators   like (+,-,\,*,===,>=,(,)) etc</b>
 11. Question 6 API can perform better if redis caching is also incorporated.
+12. Question 6: 
+```
+    api: /wallet/query/custom => old api using custom expression-evaluator
+    api: /wallet/query => using package expr-eval
+```
+
