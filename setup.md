@@ -8,15 +8,19 @@
 4. npm start (again fomr apimock folder)
 
 ### APIs:
-
+```
 1. GET : localhost:8001/loop
 2. POST : localhost:8001/csv2json | upload the csv file from postman
+```
 
 #### question 5:
+```
 3. GET: localhost:8001/dynamicdelay | uses redis to store data
 4. GET : localhost:8001/dynamicdelay/volatile | doesn't persist data | only valid till instance localhost
+```
 
 #### question 6:
+```
 5. GET: localhost:8001/wallet
 6. POST: localhost:8001/wallet 
     body =>
@@ -38,4 +42,6 @@
         "message": "request successful",
         "data": true
     }
-
+```
+10. <b>in question 6, api is scalable in terms of adding more parameters and operators. (Code has been tested to operate on operators   like (+,-,\,*,===,>=,(,)) etc</b>
+11. Question 6 API can perform better if redis caching is also incorporated.
