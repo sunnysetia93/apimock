@@ -25,6 +25,11 @@ let routes = [
     method:'POST',
     path:'/wallet/query',
     handler:handlers.queryHandler
+  },
+  {
+    method:'POST',
+    path:'/wallet/query/custom',
+    handler:handlers.queryHandler_custom
   }
 ];
 

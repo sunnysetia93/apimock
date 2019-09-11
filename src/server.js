@@ -13,7 +13,7 @@ mongoose.connect(config.mongoURI,{ useNewUrlParser: true });
 // Create a server with a host and port
 const server = Hapi.server({ 
     host: 'localhost', 
-    port: 8001
+    port: config.PORT
 });
 // Add the route
 server.route(routes);

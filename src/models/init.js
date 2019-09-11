@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const fastCSV = require('fast-csv');
 const path = require('path');
 const fs = require('fs');
 import {parseCsvToJson} from '../shared';
@@ -13,7 +12,7 @@ const Wallet = mongoose.model('Wallet');
         }
 
         try{
-
+            // throw new Error("");
             let dataArray = await parseCsvToJson(filePath);
             let len = dataArray.length;
             for(let i=0;i<len;i++){
